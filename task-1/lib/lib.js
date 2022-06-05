@@ -1,1 +1,2 @@
-export { parseArgv } from './parseArgv.js';
+export { getParams } from './getParams.js';
+export { validate } from './validate.js';
