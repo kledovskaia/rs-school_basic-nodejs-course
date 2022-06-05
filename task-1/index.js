@@ -1,8 +1,7 @@
-import { parseArgv } from './parseArgv.js';
-import { errorBoundary } from './errorBoundary.js';
+import lib from './lib/index.js';
 
 function init() {
-  const params = errorBoundary(parseArgv);
+  const params = lib.parseArgv();
 }
 
 init();
