@@ -13,7 +13,9 @@ export function parseArgv() {
     if (!(i % 2)) {
       const name = paramNames[arg];
       if (!name) {
-        throw new Error(`Parameter ${arg} is unknown`);
+        throw new Error(
+          `[Error reading parameters]: Parameter ${arg} is unknown`
+        );
       }
       params[name] = args[i + 1];
     }
