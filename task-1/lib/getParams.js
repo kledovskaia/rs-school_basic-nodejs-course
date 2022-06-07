@@ -20,7 +20,12 @@ export function getParams() {
 function createParamNames() {
   const paramNames = Object.keys(paramValidators).reduce((obj, paramName) => {
     obj[`--${paramName}`] = paramName;
-    obj[`-${paramName[0]}`] = paramName;
+    const shortCut = `-${paramName[0]}`
+    if (obj[shortCut]) {
+      obj[shortCut] = null;
+      return obj
+    }
+    obj[shortCut] = paramName;
     return obj;
   }, {});
   return paramNames;
